@@ -2,7 +2,7 @@
 require('dotenv').config()
 const express=require('express');
 const app=express();
-const port=5500;
+const port=7525;
 
 //corss policy
 const cors=require('cors');
