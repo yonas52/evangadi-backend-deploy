@@ -33,6 +33,14 @@ app.use(bodyParser.json());
 
 // user routes middleware
 app.use('/api/users',useRoutes)
+//use CSP policy
+app.use((req, res, next) => {
+    res.setHeader('Content-Security-Policy', "default-src 'self' https://localhost:3000 https://evangadi-backend-deploy-3.onrender.com");
+    next();
+});
+
+
+
 
 async function start(){
     try {
