@@ -2,7 +2,7 @@
 require('dotenv').config()
 const express=require('express');
 const app=express();
-const port=7525;
+// const port=7525;
 
 //corss policy
 const cors=require('cors');
@@ -37,6 +37,7 @@ app.use('/api/users',useRoutes)
 async function start(){
     try {
         const result= await dbconnection.execute("select 'test'")
+        const port = process.env.PORT || 5500;
         await app.listen(port)
        
         console.log('database connection established')
