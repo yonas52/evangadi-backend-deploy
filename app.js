@@ -9,15 +9,15 @@ const cors=require('cors');
 app.use(cors());
 app.use(cors({origin:true}));
 // Allow CORS to all 
-// app.use((req, res, next) => {
-//     res.setHeader("Access-Control-Allow-Origin", "*");
-//     res.setHeader(
-//       "Access-Control-Allow-Methods",
-//       "OPTIONS, GET, POST, PUT, PATCH, DELETE" // what matters here is that OPTIONS is present
-//     );
-//     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//     next();
-//   });
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "OPTIONS, GET, POST, PUT, PATCH, DELETE" // what matters here is that OPTIONS is present
+    );
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    next();
+  });
 //db connection
 const dbconnection=require('./db/dbConfig');
 
