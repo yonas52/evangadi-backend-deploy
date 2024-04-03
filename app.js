@@ -35,27 +35,27 @@ app.use(bodyParser.json());
 // user routes middleware
 app.use('/api/users',useRoutes)
 //use CSP policy
-app.use((req, res, next) => {
-    res.setHeader('Content-Security-Policy', "default-src 'self' https://localhost:3000 https://evangadi-backend-deploy-3.onrender.com");
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader('Content-Security-Policy', "default-src 'self' https://localhost:3000 https://evangadi-backend-deploy-3.onrender.com");
+//     next();
+// });
 
 
 
 
-async function start(){
-    try {
-        const result= await dbconnection.execute("select 'test'")
-        const port = process.env.PORT || 5500;
-        await app.listen(port)
+// async function start(){
+//     try {
+//         const result= await dbconnection.execute("select 'test'")
+//         const port = process.env.PORT || 5500;
+//         await app.listen(port)
        
-        console.log('database connection established')
-        console.log(`listening on ${port} `)
-    } catch (error) {
-        console.log(error.message)
-    }
-}
- start()
+//         console.log('database connection established')
+//         console.log(`listening on ${port} `)
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+// }
+//  start()
 
 
 //questions routes middleware
