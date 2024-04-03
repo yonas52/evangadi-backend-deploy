@@ -7,17 +7,8 @@ const app=express();
 //corss policy
 const cors=require('cors');
 app.use(cors());
-app.use(cors({origin:true}));
-// Allow CORS to all 
-// app.use((req, res, next) => {
-//     res.setHeader("Access-Control-Allow-Origin", "*");
-//     res.setHeader(
-//       "Access-Control-Allow-Methods",
-//       "OPTIONS, GET, POST, PUT, PATCH, DELETE" // what matters here is that OPTIONS is present
-//     );
-//     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-//     next();
-//   });
+// app.use(cors({origin:true}));
+
 //db connection
 const dbconnection=require('./db/dbConfig');
 
@@ -108,14 +99,4 @@ app.use("/api/answers" ,answerRoutes)
 
 
 
-////////users//////////
-// USE your_database_name;
-// CREATE TABLE if not exists users(
-//     userid  INT(20) NOT NULL AUTO_INCREMENT,
-//     username VARCHAR(20) NOT NULL,
-//     firstname VARCHAR(20) NOT NULL,
-//     lastname VARCHAR(20) NOT NULL,
-//      email VARCHAR(40) NOT NULL,
-//      Password VARCHAR(100) NOT NULL,
-//     PRIMARY KEY (userid)
-//   );
+
