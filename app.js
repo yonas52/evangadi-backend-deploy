@@ -5,9 +5,9 @@ const app=express();
 // const port=7525;
 
 //corss policy
-const cors=require('cors');
-app.use(cors());
-app.use(cors({origin:true}));
+// const cors=require('cors');
+// app.use(cors());
+// app.use(cors({origin:true}));
 // Allow CORS to all 
 app.use((req, res, next) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
