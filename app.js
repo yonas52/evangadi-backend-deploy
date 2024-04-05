@@ -7,7 +7,7 @@ const app=express();
 //corss policy
 const cors=require('cors');
 app.use(cors());
-// app.use(cors({origin:true}));
+app.use(cors({origin:true}));
 
 //db connection
 const dbconnection=require('./db/dbConfig');
