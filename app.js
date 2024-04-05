@@ -43,19 +43,19 @@ app.use('/api/users',useRoutes)
 
 
 
-// async function start(){
-//     try {
-//         const result= await dbconnection.execute("select 'test'")
-//         const port = process.env.PORT || 5500;
-//         await app.listen(port)
+async function start(){
+    try {
+        const result= await dbconnection.execute("select 'test'")
+        const port = process.env.PORT || 5500;
+        await app.listen(port)
        
-//         console.log('database connection established')
-//         console.log(`listening on ${port} `)
-//     } catch (error) {
-//         console.log(error.message)
-//     }
-// }
-//  start()
+        console.log('database connection established')
+        console.log(`listening on ${port} `)
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+ start()
 
 
 //questions routes middleware
