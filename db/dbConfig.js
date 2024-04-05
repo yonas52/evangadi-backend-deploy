@@ -3,7 +3,7 @@ const mysql2= require('mysql2');
 const dbconnection=mysql2.createPool({
     user: process.env.USER,
   password: process.env.PASSWORD ,
-  host: "sql6.freesqldatabase.com",
+  host: "sql5.freesqldatabase.com",
   database: process.env.DATABASE,
   connectionLimit:10
 })
