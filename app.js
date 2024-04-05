@@ -7,6 +7,17 @@ const port = process.env.PORT || 5500;
 const cors = require('cors');
 app.use(cors());
 
+// Allow CORS to all 
+app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "OPTIONS, GET, POST, PUT, PATCH, DELETE" // what matters here is that OPTIONS is present
+    );
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    next();
+  });
+
 // Database connection
 const dbconnection = require('./db/dbConfig');
 
